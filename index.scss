@@ -1,0 +1,101 @@
+// variables denoted by $
+$primary: #326dee;
+
+$secondary: #1ac888;
+
+$error: #d43782;
+
+$info: #e6c31c;
+
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+$base-border-radius: 20px;
+$base-border-thickness: 1px;
+
+// To-Do: outline buttons link https://css-tricks.com/snippets/css/multiple-borders/
+
+//import google fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+    color: inherit;
+}
+
+body{
+    font-family: Poppins;
+}
+
+ul{
+    padding:0;
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+br{
+    border: 0;
+    border-top: 1px dotted #efefef;
+}
+
+img{
+    max-width: 100%;
+}
+
+h1{
+    a{
+        color: red;
+    }
+}
+
+
+// sub-selection
+// select elements inside another element
+// example below selects all h1's in group class 
+.group:hover{
+    h1{
+        color: red;
+    }
+}
+
+
+
+h1{
+    color: $primary;
+    margin-bottom: $base-margin;
+}
+
+a{
+    color: $secondary;
+}
+
+button{
+    color: white;
+    border: solid;
+    border-color: $error;
+    background: $primary;
+    border-radius: $base-border-radius;
+    padding: 4rem;
+}
+
+.error{
+    color: $error;
+    border-color: $error;
+    border-style: solid;
+    border-radius: $base-border-radius;
+    padding: $base-padding;
+    margin: $base-margin;
+}
+
+.notification{
+    color: $secondary;
+    border-style: $secondary;
+    border-style: solid;
+    margin: $base-margin;
+    padding: $base-padding;
+    border-radius: $base-border-radius;
+    border-width: $base-border-thickness;
+}
+
