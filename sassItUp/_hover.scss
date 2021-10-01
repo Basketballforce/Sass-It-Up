@@ -1,0 +1,8 @@
+// sub-selection
+// select elements inside another element
+// example below selects all h1's in group class 
+.group:hover{
+    h1{
+        color: red;
+    }
+}

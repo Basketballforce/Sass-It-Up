@@ -2,13 +2,13 @@ const {src,dest,watch,series} = require('gulp')
 const sass = require('gulp-sass')(require('sass'))
 
 function buildStyles(){
-    return src('index.scss')
+    return src('sassItUp/**/*.scss')
     .pipe(sass())
     .pipe(dest('css'))
 }
 
 function watchMan() {
-    watch(['index.scss'],buildStyles)
+    watch(['sassItUp/**/*.scss'],buildStyles)
 }
 
 
