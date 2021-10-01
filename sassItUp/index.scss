@@ -1,6 +1,26 @@
 // partials and imports allows code to be broken up into multiple files
+// SCSS won't compile css for files that start with at _
+// File that is imported and compiled elsewhere
+
+// Variables & functions
 @import 'variables';
+
+// base & layout system
 @import 'base';
+
+
+// colors
+@import 'colors';
+
+// utilities (margin, padding, opacity)
+
+
+// components (button, card, navbar)
+@import 'components/card';
+
+
+// ORDER ON IMPORTS DOES MATTER. MAKES SENSE
+// EX: @base relies on variables defined in @variables
 
 // To-Do: outline buttons link https://css-tricks.com/snippets/css/multiple-borders/
 

@@ -1,18 +1,70 @@
 // variables denoted by $
-// SCSS won't compile css for files that start with at _
-// File that is imported and compiled elsewhere
+
+// Theme Colors
 $primary: #326dee;
-
 $secondary: #1ac888;
-
 $error: #d43782;
-
 $info: #e6c31c;
 
+
+// color palette. With Maps!
+$colors: (
+    "primary":$primary,
+    "secondary": $secondary,
+    "error": $error,
+    "info": $info,
+    "blue": #191936,
+    "red": red,
+    "yellow": yellow,
+    "green": green,
+    "orange": orange,
+    "purple": purple,
+    "gray": gray,
+    "black": black,
+    "white": white,
+);
+
+// @debug map-get($colors, "blue"); get value given key
+// @debug map-has-key($colors, "secondary"); check if key exsists
+// @debug map-remove($colors, "primary"); remove key,pair from map
+// @debug map-merge($colors, $map_to_merge_to colors); merge one map one to the other
+
+
+// Loops & Looping through maps
+
+
+
+// spacing
 $base-padding: 0.75rem;
 $base-margin: 0.75rem;
 
+// borders
 $base-border-radius: 20px;
 $base-border-thickness: 1px;
 
+// box-shadow
+$base-box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+
+// font size
+$base-font-size: 1rem;
+$font-sm: $base-font-size * 0.75;
+$font-lg: $base-font-size * 1.5;
+$font-xs: $base-font-size * 0.5;
+$font-xl: $base-font-size * 2;
+$font-xxs: $base-font-size * 0.25;
+$font-xxl: $base-font-size * 3;
+
+
+// hover
 $hover-highlight: white;
+
+
+// Math notes
+    // User math.div for division
+    // import math with: "@use 'sass:math'"
+    // math.div(number,divided_by);
+
+
+// Debug sass
+    // use '@debug "hi yall"'
+    // @debug math.div(10/3)
