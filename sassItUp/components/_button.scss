@@ -1,0 +1,56 @@
+// using mixins
+// prevents code duplication
+// mixins allow arguments that can be used to resolve common differences in children of mixins
+
+// can include arguments and specify defaults
+// ex: btn($bg-color: #ffffff)
+@mixin btn($bg-color: #e2e2e2){
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: $base-padding $base-padding *2;
+    border-radius: $base-border-radius; 
+    background-color: $bg-color
+}
+
+
+.btn{
+    @include btn();
+}
+
+@each $key, $val in $colors{
+    .btn-#{$key}{
+
+        @include btn($val);
+        border: 0;
+
+        &:hover{
+            // lighten is a sass function that takes
+            // a color and lightens it by a percentage
+            background-color: lighten($val,5);
+        }
+    }
+
+    .btn-outlined-#{$key}{
+
+        @include btn(#fff);
+        border: $base-border-thickness solid $val;
+
+        &:hover{
+            background-color: $val;
+        }
+    }
+
+
+    // get complementary color for each color
+    .btn-complement-#{$key}{
+        @include btn($val);
+        // functions return single values
+        // can be used for properties
+        color: light-comp($val);
+        &:hover{
+            color: $val;
+            background-color:light-comp($val) ;
+        }
+    }
+}
