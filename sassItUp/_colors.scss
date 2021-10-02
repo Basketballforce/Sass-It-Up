@@ -5,35 +5,62 @@
     .text-#{$key}{
         color: $val;
     }
-    .bd-#{$key}{
+    .bg-#{$key}{
         background-color: $val;
     }
 
+    .text-hover-#{$key}:hover{
+        color: $val;
+    }
+    // or with parent classes
+
+    //.text-hover-#{$key}{
+    //    &:hover{
+    //       columns: $val;
+    //   }
+    //}
+    // See https://www.youtube.com/watch?v=unhOp1Z-hec for
+
     // light-variations
     // mix white, with a color, and lighten it by 10 * index
-    @for $index from 1 through 9 {
+    @if($val != black and $val !=white){
+        @for $index from 1 through 9 {
 
-        .text-#{$key}-light-#{index}{
-            color: mix(white, $val, $index*10);
+            .text-#{$key}-light-#{$index}{
+                color: mix(white, $val, $index*10);
+            }
+
+            .bg-#{$key}-light-#{$index}{
+                background-color: mix(white, $val, $index*10);
+            }
+
         }
 
-        .bd-#{$key}-light-#{index}{
-            background-color: mix(white, $val, $index*10);
+        //dark-variations
+        @for $index from 1 through 9 {
+
+            .text-#{$key}-dark-#{$index}{
+                color: mix(black, $val, $index*10);
+            }
+
+            .bg-#{$key}-dark-#{$index}{
+                background-color: mix(black, $val, $index*10);
+            }
+
         }
-
-    }
-
-    //dark-variations
-    @for $index from 1 through 9 {
-
-        .text-#{$key}-dark-#{index}{
-            color: mix(black, $val, $index*10);
-        }
-
-        .bd-#{$key}-dark-#{index}{
-            background-color: mix(black, $val, $index*10);
-        }
-
     }
 
 }
+
+
+// conditionasl
+
+//@if (10>5){
+//    .test-if{
+//        color: black;
+ //   }
+//} @else{
+ //   .test-if-2{
+ //       color: white;
+  //  }
+//}"
