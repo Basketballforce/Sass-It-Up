@@ -1,0 +1,43 @@
+// example of extends
+
+// extends are like mixins but
+    // don;t include arguments and 
+    // are complied differently
+
+
+// when we don't need rules to be compiled into scss
+// (typically when there are used in other classes but not as its own)
+// we use a %
+
+%flex-layout{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.navbar{
+    @extend %flex-layout;
+
+    padding: $base-padding $base-padding *2;
+    box-shadow: $base-box-shadow;
+
+
+    .site-title{
+        font-size: $font-lg;
+
+    }
+
+    // override container for the navbar only to use flex layout
+    .container{
+        @extend %flex-layout;
+    }
+}
+
+@each $key, $val in $colors{
+    .navbar-#{$key}{
+        @extend .navbar;
+        background-color: $val;
+    }
+}

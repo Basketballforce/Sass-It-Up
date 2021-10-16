@@ -9,6 +9,7 @@
 // base & layout system
 @import 'base';
 @import 'breakpoints';
+@import 'grid';
 
 // colors
 @import 'colors';
@@ -19,6 +20,7 @@
 // components (button, card, navbar)
 @import 'components/card';
 @import 'components/button';
+@import 'components/navbar';
 
 
 // ORDER ON IMPORTS DOES MATTER. MAKES SENSE
